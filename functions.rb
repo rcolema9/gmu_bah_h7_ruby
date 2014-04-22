@@ -1,13 +1,19 @@
 # Return a reversed copy of the array
 def reverse(an_array)
-  # write your code here
+  reversed_array = an_array.reverse
+  return reversed_array
 end
 
 # Return a map of letters and counts of letters
 # Letters should be lowercase before counting
 # For example, histogram('Hello') returns {'h'=>1, 'e'=>1, '1'=>2, 'o'=>1}
 def histogram(a_string)
-  #write your code here
+  
+  #Split string and turn into array
+  split_string_hash = a_string.split(//).hash
+  #Return Hash
+  return split_string_hash
+  
 end
 
 #For i from 1 to 100, return an an array
@@ -18,9 +24,18 @@ end
 #Otherwise, the elementing is simply the falue of i
 # For example [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', ..., 14, 'FizzBuzz', ...]
 def fizzbuzz
-  # write your code here
+  fizzbuzz_array = [1..100]
+  for count in 0..99
+    if fizzbuzz_array[count] % 3 == 0
+    	return 'fizz'
+      elsif fizzbuzz_array[count] % 5 == 0
+    	return 'buzz'
+      elsif fizzbuzz_array[count] % 3 == 0 and Array[count] % 5 == 0
+    	return 'fizz buzz'
+      else return fizzbuzz_array[count]
+    end
+  end
 end
-
 # Uncomment each of these to test your functions
-# puts reverse([3,6,'foo', [ ], 27, :rain, 2.14])
-# puts fizzbuzz.join("\n")
+puts reverse([3,6,'foo', [ ], 27, :rain, 2.14])
+puts fizzbuzz.join("\n")
