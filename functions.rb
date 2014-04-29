@@ -9,9 +9,9 @@ end
 # For example, histogram('Hello') returns {'h'=>1, 'e'=>1, '1'=>2, 'o'=>1}
 def histogram(a_string)
   #downcase and convert to an array
-  a_string.downcase
+  a_string.downcase!
   letters = []
-  letters = a.string.split(//)
+  letters = a_string.split(//)
   
   #Initialize and iterate over the array 
   hg = Hash.new(0)
@@ -54,7 +54,15 @@ end
 # Be sure to only sum the numbers
 # (Hint: the is_a? method might be useful here)
 def sum_only_numbers(an_array)
-  # write your code here
+  sum = 0
+  an_array.each do |v|
+    if v.is_a?(Integer)
+      sum =sum + v
+    elsif v.is_a?(Float) 
+      sum = sum + v
+    end
+  end
+  return sum
 end
 
 #For i from 1 to 100, return an an array
